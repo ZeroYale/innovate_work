@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>javaWeb002</display-name>
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>com.etc.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/loginServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>stuServlet</servlet-name>
+    <servlet-class>com.etc.servlet.StuServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>stuServlet</servlet-name>
+    <url-pattern>/stuServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>mainServlet</servlet-name>
+    <servlet-class>com.etc.servlet.MainServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>mainServlet</servlet-name>
+    <url-pattern>/mainServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>textFindServlet</servlet-name>
+    <servlet-class>com.etc.servlet.TextFindServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>textFindServlet</servlet-name>
+    <url-pattern>/textFindServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>textAddServlet</servlet-name>
+    <servlet-class>com.etc.servlet.TextAddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>textAddServlet</servlet-name>
+    <url-pattern>/textAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>bookAddServlet</servlet-name>
+    <servlet-class>com.etc.servlet.BookAddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>bookAddServlet</servlet-name>
+    <url-pattern>/bookAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>bookFindServlet</servlet-name>
+    <servlet-class>com.etc.servlet.BookFindServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>bookFindServlet</servlet-name>
+    <url-pattern>/bookFindServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>bookUpdateServlet</servlet-name>
+    <servlet-class>com.etc.servlet.BookUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>bookUpdateServlet</servlet-name>
+    <url-pattern>/bookUpdateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>teaAddServlet</servlet-name>
+    <servlet-class>com.etc.servlet.TeaAddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>teaAddServlet</servlet-name>
+    <url-pattern>/teaAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>teaFindServlet</servlet-name>
+    <servlet-class>com.etc.servlet.TeaFindServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>teaFindServlet</servlet-name>
+    <url-pattern>/teaFindServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>stuFindServlet</servlet-name>
+    <servlet-class>com.etc.servlet.StuFindServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>stuFindServlet</servlet-name>
+    <url-pattern>/stuFindServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>stuAddServlet</servlet-name>
+    <servlet-class>com.etc.servlet.StuAddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>stuAddServlet</servlet-name>
+    <url-pattern>/stuAddServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
+
+
+
+
+
+
+
+
