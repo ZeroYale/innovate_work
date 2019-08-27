@@ -14,39 +14,36 @@ import javax.servlet.http.HttpServletResponse;
 import com.etc.db.ConnDB;
 
 
-public class StuAddServlet extends HttpServlet {
+public class StuDelteServlet extends HttpServlet {
 	
 	Connection conn = null;
 	PreparedStatement ps = null;
 	ResultSet rs = null;
-	
+
+       
+
+   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request,response);
+			doPost(request,response);
 	}
 
-
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		
 		String num = request.getParameter("num");
-		String name = request.getParameter("name");
-		String sex = request.getParameter("sex");
-		String academy = request.getParameter("academy");
-		String cla = request.getParameter("cla");
+
 		conn = ConnDB.openConn();
 		try {
-			String sql = "insert into student(num,name,sex,academy,cla) values(?,?,?,?,?)";
+			String sql = "delete from student where num=?";
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, num);
-			ps.setString(2, name);
-			ps.setString(3, sex);
-			ps.setString(4, academy);
-			ps.setString(5, cla);
+
 			int index = ps.executeUpdate();
 			if(index ==1) {
-				System.out.println("学生添加成功");
+				System.out.println("学生删除成功");
 			}else {
-				System.out.println("学生添加失败");
+				System.out.println("学生删除失败");
 			}
 			
 		} catch(Exception e) {

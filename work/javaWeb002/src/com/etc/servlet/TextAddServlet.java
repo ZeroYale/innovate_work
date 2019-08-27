@@ -42,9 +42,9 @@ public class TextAddServlet extends HttpServlet {
 			ps.setString(4, credit);
 			int index = ps.executeUpdate();
 			if(index ==1) {
-				System.out.println("成功");
+				System.out.println("课程添加成功");
 			}else {
-				System.out.println("失败");
+				System.out.println("课程添加失败");
 			}
 			
 		} catch(Exception e) {

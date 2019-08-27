@@ -46,9 +46,9 @@ public class BookUpdateServlet extends HttpServlet {
 			
 			int index = ps.executeUpdate();
 			if(index==1){
-				System.out.println("修改成功");
+				System.out.println("教材修改成功");
 			}else{
-				System.out.println("修改失败");
+				System.out.println("教材修改失败");
 			}
 			
 		} catch (Exception e) {

@@ -32,6 +32,7 @@ public class BookAddServlet extends HttpServlet {
 		String publishing = request.getParameter("publishing");
 		String author = request.getParameter("author");
 		String price = request.getParameter("price");
+		
 		conn = ConnDB.openConn();
 		try {
 			String sql = "insert into textbook(ISBN,num,publishing,author,price) values(?,?,?,?,?)";
@@ -44,9 +45,9 @@ public class BookAddServlet extends HttpServlet {
 
 			int index = ps.executeUpdate();
 			if(index ==1) {
-				System.out.println("成功");
+				System.out.println("教材添加成功");
 			}else {
-				System.out.println("失败");
+				System.out.println("教材添加失败");
 			}
 			
 		} catch(Exception e) {

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80016
 File Encoding         : 65001
 
-Date: 2019-08-25 07:27:00
+Date: 2019-08-27 20:37:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,10 +20,11 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `course`;
 CREATE TABLE `course` (
-  `num` varchar(20) DEFAULT NULL,
+  `num` varchar(20) NOT NULL,
   `name` varchar(20) DEFAULT NULL,
   `type` varchar(20) DEFAULT NULL,
-  `credit` varchar(20) DEFAULT NULL
+  `credit` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`num`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
@@ -35,18 +36,20 @@ INSERT INTO `course` VALUES ('003', 'python', '计算机', '2');
 INSERT INTO `course` VALUES ('004', 'JS', '计算机', '2');
 INSERT INTO `course` VALUES ('005', 'spring', '计算机', '4');
 INSERT INTO `course` VALUES ('1', '体育', '运动', '3');
+INSERT INTO `course` VALUES ('2', '马克思', '人文', '3');
 
 -- ----------------------------
 -- Table structure for `purchase`
 -- ----------------------------
 DROP TABLE IF EXISTS `purchase`;
 CREATE TABLE `purchase` (
-  `num` varchar(20) DEFAULT NULL,
+  `num` varchar(20) NOT NULL,
   `course` varchar(20) DEFAULT NULL,
   `teacher` varchar(20) DEFAULT NULL,
   `class` varchar(20) DEFAULT NULL,
   `quantity` varchar(20) DEFAULT NULL,
-  `price` varchar(20) DEFAULT NULL
+  `price` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`num`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
@@ -73,23 +76,25 @@ CREATE TABLE `student` (
 -- ----------------------------
 -- Records of student
 -- ----------------------------
-INSERT INTO `student` VALUES ('001', 'aaa', '女', '计算机学院', '5班');
 INSERT INTO `student` VALUES ('002', 'bbb', '男', '计算机学院', '5班');
 INSERT INTO `student` VALUES ('003', 'ccc', '男', '计算机学院', '5班');
 INSERT INTO `student` VALUES ('004', 'ddd', '男', '计算机学院', '5班');
 INSERT INTO `student` VALUES ('005', 'eee', '男', '计算机学院', '5班');
-INSERT INTO `student` VALUES ('1', '秦心', '女', '计算机', '50');
+INSERT INTO `student` VALUES ('2', '小暗', '女', '管理', '1');
+INSERT INTO `student` VALUES ('1', '秦心', '女', '计算机', '5');
+INSERT INTO `student` VALUES ('001', 'aaa', '女', 'hh', '1');
 
 -- ----------------------------
 -- Table structure for `teacher`
 -- ----------------------------
 DROP TABLE IF EXISTS `teacher`;
 CREATE TABLE `teacher` (
-  `num` varchar(20) DEFAULT NULL,
+  `num` varchar(20) NOT NULL,
   `name` varchar(20) DEFAULT NULL,
   `sex` varchar(20) DEFAULT NULL,
   `academy` varchar(20) DEFAULT NULL,
-  `authority` varchar(20) DEFAULT NULL
+  `authority` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`num`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
@@ -99,11 +104,11 @@ INSERT INTO `teacher` VALUES ('001', 'aaa', '男', 'Y', '计算机学院');
 INSERT INTO `teacher` VALUES ('002', 'bbb', '男', 'Y', '计算机学院');
 INSERT INTO `teacher` VALUES ('003', 'ccc', '男', 'Y', '计算机学院');
 INSERT INTO `teacher` VALUES ('004', 'ddd', '女', 'Y', '计算机学院');
-INSERT INTO `teacher` VALUES ('1', '江毅东', '男', '计算机', 'Y');
-INSERT INTO `teacher` VALUES ('2', '江', '女', '管理', 'Y');
+INSERT INTO `teacher` VALUES ('1', 'nml', '男', 'hh', 'N');
 INSERT INTO `teacher` VALUES ('3', '罗', '女', '管理', 'Y');
 INSERT INTO `teacher` VALUES ('4', '苏', '女', '管理', 'Y');
 INSERT INTO `teacher` VALUES ('6', '秦心', '女', '管理', 'N');
+INSERT INTO `teacher` VALUES ('7', '万由里', '女', '管理', 'Y');
 
 -- ----------------------------
 -- Table structure for `textbook`
@@ -111,10 +116,11 @@ INSERT INTO `teacher` VALUES ('6', '秦心', '女', '管理', 'N');
 DROP TABLE IF EXISTS `textbook`;
 CREATE TABLE `textbook` (
   `ISBN` varchar(20) DEFAULT NULL,
-  `num` varchar(20) DEFAULT NULL,
+  `num` varchar(20) NOT NULL,
   `publishing` varchar(20) DEFAULT NULL,
   `author` varchar(20) DEFAULT NULL,
-  `price` varchar(20) DEFAULT NULL
+  `price` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`num`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
@@ -122,7 +128,8 @@ CREATE TABLE `textbook` (
 -- ----------------------------
 INSERT INTO `textbook` VALUES ('1111144', '001', '德意志', '希特勒', '005');
 INSERT INTO `textbook` VALUES ('22222', '002', '出版社2', '菜鸟', '20');
-INSERT INTO `textbook` VALUES ('1111144', '003', '德意志', '希特勒', '29');
+INSERT INTO `textbook` VALUES ('1114', '003', '任然', '阿萨', '34');
 INSERT INTO `textbook` VALUES ('44444', '004', '出版社1', '马云', '996');
 INSERT INTO `textbook` VALUES ('55555', '005', '出版社1', '刘强东', '123');
-INSERT INTO `textbook` VALUES ('1111144', '1', '德意志', '希特勒', '29');
+INSERT INTO `textbook` VALUES ('1111144', '1', 'C语言从入门到放弃', '账号强', '65');
+INSERT INTO `textbook` VALUES ('111440', '2', '外国人', '楼普额', '65');

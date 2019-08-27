@@ -12,7 +12,6 @@
     <servlet-name>loginServlet</servlet-name>
     <url-pattern>/loginServlet</url-pattern>
   </servlet-mapping>
-
   <servlet>
     <servlet-name>stuServlet</servlet-name>
     <servlet-class>com.etc.servlet.StuServlet</servlet-class>
@@ -54,6 +53,14 @@
     <url-pattern>/bookAddServlet</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>bookDelteServlet</servlet-name>
+    <servlet-class>com.etc.servlet.BookDelteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>bookDelteServlet</servlet-name>
+    <url-pattern>/bookDelteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>bookFindServlet</servlet-name>
     <servlet-class>com.etc.servlet.BookFindServlet</servlet-class>
   </servlet>
@@ -78,6 +85,14 @@
     <url-pattern>/teaAddServlet</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>textDelteServlet</servlet-name>
+    <servlet-class>com.etc.servlet.TextDelteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>textDelteServlet</servlet-name>
+    <url-pattern>/textDelteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>teaFindServlet</servlet-name>
     <servlet-class>com.etc.servlet.TeaFindServlet</servlet-class>
   </servlet>
@@ -85,7 +100,14 @@
     <servlet-name>teaFindServlet</servlet-name>
     <url-pattern>/teaFindServlet</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <servlet-name>teaDelteServlet</servlet-name>
+    <servlet-class>com.etc.servlet.TeaDelteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>teaDelteServlet</servlet-name>
+    <url-pattern>/teaDelteServlet</url-pattern>
+  </servlet-mapping>
   <servlet>
     <servlet-name>stuFindServlet</servlet-name>
     <servlet-class>com.etc.servlet.StuFindServlet</servlet-class>
@@ -94,7 +116,6 @@
     <servlet-name>stuFindServlet</servlet-name>
     <url-pattern>/stuFindServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>stuAddServlet</servlet-name>
     <servlet-class>com.etc.servlet.StuAddServlet</servlet-class>
@@ -103,12 +124,14 @@
     <servlet-name>stuAddServlet</servlet-name>
     <url-pattern>/stuAddServlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>stuDelteServlet</servlet-name>
+    <servlet-class>com.etc.servlet.StuDelteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>stuDelteServlet</servlet-name>
+    <url-pattern>/stuDelteServlet</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
-
-
-
-
-
-
-
-

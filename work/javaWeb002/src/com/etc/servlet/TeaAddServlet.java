@@ -44,9 +44,9 @@ public class TeaAddServlet extends HttpServlet {
 			ps.setString(5, authority);
 			int index = ps.executeUpdate();
 			if(index ==1) {
-				System.out.println("成功");
+				System.out.println("教师添加成功");
 			}else {
-				System.out.println("失败");
+				System.out.println("教师添加失败");
 			}
 			
 		} catch(Exception e) {
