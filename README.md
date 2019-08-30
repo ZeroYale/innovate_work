@@ -1,5 +1,6 @@
 # 软创任务
 
+开发环境:Win10
 开发IDE:eclipse+Tomcat
 数据库:MYSQL
 
@@ -25,3 +26,8 @@ mysql好像加了个主键约束 - primary key
 4、 使用这份代码时需要自己将sql文件导入数据库，然后java文件需要打开tomcat来使用
 
 tomcat网址:http://localhost:8080/
+
+第二次修改:
+1、使用了BootStrap简单地美化了前端
+2、优化使用了MVC设计思想
+3、我好菜啊
