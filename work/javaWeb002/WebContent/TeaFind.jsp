@@ -10,11 +10,11 @@
 下面是教师信息:
 <br/>
 <b>
-${num}
-${name}
-${sex}
-${academy}
-${authority}
+${teacher.num}
+${teacher.name}
+${teacher.sex}
+${teacher.academy}
+${teacher.authority}
 </b>
 <br/>
 下面是图片:

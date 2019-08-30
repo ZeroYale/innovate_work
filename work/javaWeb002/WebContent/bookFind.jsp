@@ -10,11 +10,11 @@
 下面是教材信息:
 <br/>
 <b>
-${ISBN}
-${num}
-${publishing}
-${author}
-${price}
+${textbook.ISBN}
+${textbook.num}
+${textbook.publishing}
+${textbook.author}
+${textbook.price}
 </b>
 <br/>
 下面是图片:

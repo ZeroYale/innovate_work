@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.etc.db.ConnDB;
+import com.etc.service.TeacherService;
 
 
 public class TeaDelteServlet extends HttpServlet {
@@ -31,24 +32,11 @@ public class TeaDelteServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		
 		String num = request.getParameter("num");
-
-		conn = ConnDB.openConn();
-		try {
-			String sql = "delete from teacher where num=?";
-			ps = conn.prepareStatement(sql);
-			ps.setString(1, num);
-	
-			int index = ps.executeUpdate();
-			if(index ==1) {
-				System.out.println("教师删除成功");
-			}else {
-				System.out.println("教师删除失败");
-			}
-			
-		} catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			ConnDB.closeConn(rs, ps, conn);
+		TeacherService teacherService = new TeacherService();
+		int index = teacherService.DeleteTeacher(num);
+		//System.out.println("index:"+index);
+		if(index == 1) {
+			response.sendRedirect("main.jsp");
 		}
 	}
 

@@ -11,14 +11,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.etc.bean.Student;
 import com.etc.db.ConnDB;
+import com.etc.service.StudentService;
 
 
 public class StuDelteServlet extends HttpServlet {
 	
-	Connection conn = null;
-	PreparedStatement ps = null;
-	ResultSet rs = null;
 
        
 
@@ -32,25 +31,14 @@ public class StuDelteServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		
 		String num = request.getParameter("num");
-
-		conn = ConnDB.openConn();
-		try {
-			String sql = "delete from student where num=?";
-			ps = conn.prepareStatement(sql);
-			ps.setString(1, num);
-
-			int index = ps.executeUpdate();
-			if(index ==1) {
-				System.out.println("学生删除成功");
-			}else {
-				System.out.println("学生删除失败");
+		
+		StudentService studentService = new StudentService();
+		int index = studentService.DeleteStudent(num);
+			if(index == 1) {
+				response.sendRedirect("main.jsp");
 			}
 			
-		} catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			ConnDB.closeConn(rs, ps, conn);
-		}
+
 	}
 
 }

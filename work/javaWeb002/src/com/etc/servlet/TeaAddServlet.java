@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.etc.bean.Teacher;
 import com.etc.db.ConnDB;
+import com.etc.service.TeacherService;
 
 
 public class TeaAddServlet extends HttpServlet {
@@ -33,26 +35,20 @@ public class TeaAddServlet extends HttpServlet {
 		String sex = request.getParameter("sex");
 		String academy = request.getParameter("academy");
 		String authority = request.getParameter("authority");
-		conn = ConnDB.openConn();
-		try {
-			String sql = "insert into teacher(num,name,sex,academy,authority) values(?,?,?,?,?)";
-			ps = conn.prepareStatement(sql);
-			ps.setString(1, num);
-			ps.setString(2, name);
-			ps.setString(3, sex);
-			ps.setString(4, academy);
-			ps.setString(5, authority);
-			int index = ps.executeUpdate();
-			if(index ==1) {
-				System.out.println("教师添加成功");
-			}else {
-				System.out.println("教师添加失败");
-			}
-			
-		} catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			ConnDB.closeConn(rs, ps, conn);
+		
+		Teacher teacher = new Teacher();
+		teacher.setNum(num);
+		teacher.setName(name);
+		teacher.setSex(sex);
+		teacher.setAcademy(academy);
+		teacher.setAcademy(academy);
+		
+		TeacherService teacherService = new TeacherService();
+		int index = teacherService.AddTeacher(teacher);
+		if(index ==1) {
+			response.sendRedirect("main.jsp");
+		}else {
+			response.sendRedirect("login.jsp");
 		}
 	}
 

@@ -11,15 +11,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.etc.bean.Student;
 import com.etc.db.ConnDB;
+import com.etc.service.StudentService;
 
 
 public class StuAddServlet extends HttpServlet {
-	
-	Connection conn = null;
-	PreparedStatement ps = null;
-	ResultSet rs = null;
-	
+		
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request,response);
 	}
@@ -33,27 +31,22 @@ public class StuAddServlet extends HttpServlet {
 		String sex = request.getParameter("sex");
 		String academy = request.getParameter("academy");
 		String cla = request.getParameter("cla");
-		conn = ConnDB.openConn();
-		try {
-			String sql = "insert into student(num,name,sex,academy,cla) values(?,?,?,?,?)";
-			ps = conn.prepareStatement(sql);
-			ps.setString(1, num);
-			ps.setString(2, name);
-			ps.setString(3, sex);
-			ps.setString(4, academy);
-			ps.setString(5, cla);
-			int index = ps.executeUpdate();
+		
+		Student student = new Student();
+		student.setName(name);
+		student.setNum(num);
+		student.setSex(sex);
+		student.setAcademy(academy);
+		student.setCla(cla);
+		
+		StudentService studentService = new StudentService();
+			int index = studentService.AddStudent(student);
 			if(index ==1) {
-				System.out.println("学生添加成功");
+				response.sendRedirect("main.jsp");
 			}else {
-				System.out.println("学生添加失败");
+				response.sendRedirect("login.jsp");
 			}
-			
-		} catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			ConnDB.closeConn(rs, ps, conn);
-		}
+		
 	}
 
 }

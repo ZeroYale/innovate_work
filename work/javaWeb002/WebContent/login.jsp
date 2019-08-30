@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="js/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
 <title>login</title>
 </head>
 <body>
@@ -11,15 +12,21 @@
 <hr>
 <br/>
 <form action="loginServlet" method="post">
-输入id:
-<input type="text" name="num"/>
-输入名字:
-<input type="text" name="name"/>
-<input type="submit" value="登录"/>
+<div class="form-group">
+	<label for="name">输入id:</label>
+	<input type="text" class="form-control"  placeholder="请输入id"  name="num"/>
+</div>
+
+<div class="form-group">
+	<label for="text">输入名字</label>
+	<input type="text" class="form-control" placeholder="请输入名字" name="name"/>
+</div>
+<button type="submit" class="btn btn-warning">登录</button>
+
 <br/>
 请选择身份:
 <input type="radio" name="10" value="1">学生
 <input type="radio" name="10" value="2" checked>教师
-<img src="img/1.jpg"/ style="position:absolute; left:100px; top:150px; ">
+<img src="img/1.jpg"/ style="position:absolute; left:100px; top:300px; ">
 </body>
 </html>

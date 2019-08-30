@@ -11,14 +11,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.etc.bean.Textbook;
 import com.etc.db.ConnDB;
+import com.etc.service.TextbookService;
 
 
 public class BookAddServlet extends HttpServlet {
 
-	Connection conn = null;
-	PreparedStatement ps = null;
-	ResultSet rs = null;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request,response);
@@ -33,28 +32,22 @@ public class BookAddServlet extends HttpServlet {
 		String author = request.getParameter("author");
 		String price = request.getParameter("price");
 		
-		conn = ConnDB.openConn();
-		try {
-			String sql = "insert into textbook(ISBN,num,publishing,author,price) values(?,?,?,?,?)";
-			ps = conn.prepareStatement(sql);
-			ps.setString(1, ISBN);
-			ps.setString(2, num);
-			ps.setString(3, publishing);
-			ps.setString(4, author);
-			ps.setString(5, price);
-
-			int index = ps.executeUpdate();
+		Textbook textbook = new Textbook();
+		textbook.setNum(num);
+		textbook.setISBN(ISBN);
+		textbook.setAuthor(author);
+		textbook.setPrice(price);
+		textbook.setPublishing(publishing);
+		
+		TextbookService textbookService = new TextbookService();		
+			int index = textbookService.AddTextbook(textbook);
 			if(index ==1) {
-				System.out.println("教材添加成功");
+				response.sendRedirect("main.jsp");
 			}else {
-				System.out.println("教材添加失败");
+				response.sendRedirect("login.jsp");
 			}
 			
-		} catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			ConnDB.closeConn(rs, ps, conn);
-		}
+		
 	}
 
 }

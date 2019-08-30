@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.etc.db.ConnDB;
+import com.etc.service.TextbookService;
 
 
 public class BookDelteServlet extends HttpServlet {
@@ -33,23 +34,11 @@ public class BookDelteServlet extends HttpServlet {
 		
 		String num = request.getParameter("num");
 
-		conn = ConnDB.openConn();
-		try {
-			String sql = "delete from textbook where num=?";
-			ps = conn.prepareStatement(sql);
-			ps.setString(1, num);
+		TextbookService textbookService = new TextbookService();
+		int index = textbookService.DeleteTextbook(num);
 
-			int index = ps.executeUpdate();
-			if(index ==1) {
-				System.out.println("½Ì²ÄÉ¾³ý³É¹¦");
-			}else {
-				System.out.println("½Ì²ÄÉ¾³ýÊ§°Ü");
-			}
-			
-		} catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			ConnDB.closeConn(rs, ps, conn);
+		if(index == 1) {
+			response.sendRedirect("main.jsp");
 		}
 	}
 

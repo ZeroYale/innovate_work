@@ -29,20 +29,20 @@
     <url-pattern>/mainServlet</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>textFindServlet</servlet-name>
-    <servlet-class>com.etc.servlet.TextFindServlet</servlet-class>
+    <servlet-name>courseFindServlet</servlet-name>
+    <servlet-class>com.etc.servlet.CourseFindServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>textFindServlet</servlet-name>
-    <url-pattern>/textFindServlet</url-pattern>
+    <servlet-name>courseFindServlet</servlet-name>
+    <url-pattern>/courseFindServlet</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>textAddServlet</servlet-name>
-    <servlet-class>com.etc.servlet.TextAddServlet</servlet-class>
+    <servlet-name>courseAddServlet</servlet-name>
+    <servlet-class>com.etc.servlet.CourseAddServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>textAddServlet</servlet-name>
-    <url-pattern>/textAddServlet</url-pattern>
+    <servlet-name>courseAddServlet</servlet-name>
+    <url-pattern>/courseAddServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>bookAddServlet</servlet-name>
@@ -85,12 +85,12 @@
     <url-pattern>/teaAddServlet</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>textDelteServlet</servlet-name>
-    <servlet-class>com.etc.servlet.TextDelteServlet</servlet-class>
+    <servlet-name>courseDelteServlet</servlet-name>
+    <servlet-class>com.etc.servlet.CourseDelteServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>textDelteServlet</servlet-name>
-    <url-pattern>/textDelteServlet</url-pattern>
+    <servlet-name>courseDelteServlet</servlet-name>
+    <url-pattern>/courseDelteServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>teaFindServlet</servlet-name>

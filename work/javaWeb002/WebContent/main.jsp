@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="js/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
 <title>main</title> 
 </head>
 <body>
@@ -12,7 +13,7 @@
 <form action=bookFindServlet method="post">
 要查询的教材id:
 <input type="text" name="num"/>
-<button type="submit" value="1">教材查询</button>
+<button type="submit" class="btn btn-warning" >教材查询</button>
 <br/>
 </form>
 
@@ -30,7 +31,7 @@
 <input type="text" name="author"/>
 要增加的教材价格:
 <input type="text" name="price"/>
-<button type="submit" value="2">教材录入</button>
+<button type="submit" class="btn btn-success">教材录入</button>
 </form>
 
 
@@ -48,14 +49,18 @@
 <input type="text" name="price"/>
 要修改的教材num:
 <input type="text" name="num"/>
-<button type="submit" value="3">教材修改</button>
+<button type="submit" class="btn btn-info">
+				<span class="glyphicon glyphicon-pencil"></span>
+				修改</button>
 </form>
 
 
 <form action=bookDelteServlet method="post">
 要删除的教材id:
 <input type="text" name="num"/>
-<button type="submit" value="1">教材删除</button>
+<button type="submit" class="btn btn-danger">
+<span class="glyphicon glyphicon-trash"></span>
+			教材删除</button>
 <br/>
 </form>
 
@@ -66,15 +71,15 @@
 
 
 
-<form action="textFindServlet" method="post">
+<form action="courseFindServlet" method="post">
 要查询的课程id:
-<input type="text" name="num"/>
-<button type="submit" value="5">课程查询</button>
+<input type="text"  name="num"/>
+<button type="submit" class="btn btn-warning" >课程查询</button>
 <br/>
 </form>
 
 
-<form action="textAddServlet" method="post">
+<form action="courseAddServlet" method="post">
 <!--注册(要所有的信息啊！)-->
 要增加的课程id:
 <input type="text" name="num"/>
@@ -84,15 +89,16 @@
 <input type="text" name="type"/>
 要增加的课程学分：
 <input type="text" name="credit"/>
-<button type="submit" value="6">课程录入</button>
-
+<button type="submit" class="btn btn-success">课程录入</button>
 </form>
 
 <!-- 新 -->
-<form action=textDelteServlet method="post">
+<form action=courseDelteServlet method="post">
 要删除的课程id:
 <input type="text" name="num"/>
-<button type="submit" value="1">课程删除</button>
+<button type="submit" class="btn btn-danger">
+<span class="glyphicon glyphicon-trash"></span>
+			课程删除</button>
 <br/>
 </form>
 
@@ -103,7 +109,7 @@
 
 要查询的教师num:
 <input type="text" name="num"/>
-<button type="submit" value="7">教师信息查询</button>
+<button type="submit" class="btn btn-warning">教师信息查询</button>
 <br/>
 </form>
 
@@ -120,7 +126,7 @@
 <input type="text" name="academy"/>
 要增加的教师权力:
 <input type="text" name="authority"/>
-<button type="submit" value="8">教师信息录入</button>
+<button type="submit" class="btn btn-success">教师信息录入</button>
 
 
 </form>
@@ -128,7 +134,9 @@
 <form action=teaDelteServlet method="post">
 要删除的教师id:
 <input type="text" name="num"/>
-<button type="submit" value="1">教师删除</button>
+<button type="submit" class="btn btn-danger">
+<span class="glyphicon glyphicon-trash"></span>
+			教师删除</button>
 <br/>
 </form>
 
@@ -137,7 +145,7 @@
 <form action="stuFindServlet" method="post">
 要查询的学生num:
 <input type="text" name="num"/>
-<button type="submit" value="9">学生信息查询</button>
+<button type="submit" class="btn btn-warning">学生信息查询</button>
 <br/>
 </form>
 
@@ -154,14 +162,15 @@
 <input type="text" name="academy"/>
 要增加的学生班级:
 <input type="text" name="cla"/>
-<button type="submit" value="10">学生信息录入</button>
+<button type="submit" class="btn btn-success">学生信息录入</button>
 </form>
 
-<!-- 新 -->
 <form action=stuDelteServlet method="post">
 要删除的学生id:
 <input type="text" name="num"/>
-<button type="submit" value="1">学生删除</button>
+<button type="submit" class="btn btn-danger">
+<span class="glyphicon glyphicon-trash"></span>
+			学生删除</button>
 <br/>
 </form>
 </body>

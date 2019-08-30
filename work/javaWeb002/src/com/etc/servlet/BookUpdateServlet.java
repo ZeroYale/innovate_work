@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.etc.bean.Textbook;
 import com.etc.db.ConnDB;
+import com.etc.service.TextbookService;
 
 
 public class BookUpdateServlet extends HttpServlet {
@@ -26,6 +28,7 @@ public class BookUpdateServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		request.setCharacterEncoding("utf-8");
 		
 		String ISBN = request.getParameter("ISBN");
@@ -34,28 +37,15 @@ public class BookUpdateServlet extends HttpServlet {
 		String author = request.getParameter("author");
 		String price = request.getParameter("price");
 		
-		conn = ConnDB.openConn();
-		try {
-			String sql = "update textbook set ISBN=?,publishing=?,author=? ,price=? where num=?";
-			ps = conn.prepareStatement(sql);
-			ps.setString(1, ISBN);
-			ps.setString(2, publishing);
-			ps.setString(3, author);
-			ps.setString(4, price);
-			ps.setString(5, num);
-			
-			int index = ps.executeUpdate();
-			if(index==1){
-				System.out.println("教材修改成功");
-			}else{
-				System.out.println("教材修改失败");
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}finally{
-			ConnDB.closeConn(rs, ps, conn);
-		}
+		Textbook textbook = new Textbook(); 
+		textbook.setNum(num);
+		textbook.setISBN(ISBN);
+		textbook.setPublishing(publishing);
+		textbook.setAuthor(author);
+		textbook.setPrice(price);
+		
+		TextbookService textbookService = new TextbookService();
+		textbookService.UpdateTextbook(textbook);
 	}
 
 }
